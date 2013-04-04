@@ -3,8 +3,8 @@ Type: Package
 Title: API for access to SQLShare database
 Version: 1.0
 Date: 2013-04-02
-Author: Andrew White
-Maintainer: Bill Howe <billhowe@cs.washington.edu>
+Author: Andrew White <white.d.andrew@gmail.com>
+Maintainer: Andrew White <white.d.andrew@gmail.com>, Bill Howe <billhowe@cs.washington.edu>
 Description: Provides API for accessing SQLShare. 
 License: MIT
 Depends: RCurl
