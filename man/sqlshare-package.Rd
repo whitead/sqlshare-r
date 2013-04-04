@@ -4,7 +4,6 @@
 \docType{package}
 \title{
 API for SQLShare web application
-~~ package title ~~
 }
 \description{
 Provides API for SQL statements on databases hosted on SQLShare (\url{http://http://escience.washington.edu/sqlshare})
@@ -15,7 +14,7 @@ Package: \tab sqlshare\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2013-04-02\cr
-License: \tab What license is it under?\cr
+License: \tab MIT\cr
 }
 }
 \author{
