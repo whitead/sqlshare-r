@@ -22,7 +22,7 @@ License: \tab What license is it under?\cr
 Andrew D White
 }
 \references{
-  Information on SQLShare may be found here: \url{http://http://escience.washington.edu/sqlshare}
+  Information on SQLShare may be found here: \url{http://escience.washington.edu/sqlshare}
 }
 
 \keyword{ package }
@@ -32,7 +32,7 @@ Andrew D White
 
   ##Maybe replace with REST call to get default account
   \dontshow{if(!exists("sqlshare.session") || is.null(sqlshare.session)) sqlshare.session <-
-  list(host="https://sqlshare-rest.cloudapp.net", user="sqlshare2012@gmail.com", key="4916f21df583c0e0bc5361c42d2e6b58")}
+  list(host="sqlshare-rest.cloudapp.net", user="sqlshare2012@gmail.com", key="4916f21df583c0e0bc5361c42d2e6b58")}
 
   #get the periodic table of elements
   sql <- "select * from [sqlshare@uw.edu].[periodic_table]"

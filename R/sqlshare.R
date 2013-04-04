@@ -9,7 +9,7 @@ loadconfig <- function(sqlsharedir, config) {
   if(!file.exists(cfile)) {
     assign("sqlshare.session", NULL, envir=.GlobalEnv)
     cat(paste("Please create a config file at", cfile,"\n"))
-    cat("Following this format\n[sqlshare]\nhost=https://sqlshare-rest.cloudapp.net\nuser=your_username\npassword=your_api_key\n")
+    cat("Following this format\n[sqlshare]\nhost=sqlshare-rest.cloudapp.net\nuser=your_username\npassword=your_api_key\n")
 
   } else {
     #params <- yaml.load_file(cfile)
@@ -31,7 +31,7 @@ fetch.data.frame <- function(sql, session=sqlshare.session) {
     return(NULL)
   }
   
-  host <- sqlshare.session$host
+  host <- paste("https://", sqlshare.session$host, sep="")
   selector <- "/REST.svc/v1/db/file"
   query <- paste("?sql=",URLencode(sql),sep="")
 
