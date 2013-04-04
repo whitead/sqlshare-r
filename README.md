@@ -24,7 +24,7 @@ Install
 
 To install from the source here, use:
 
-    wget https://github.com/whitead/sqlshare/archive/master.zip
+    wget https://github.com/whitead/sqlshare-r/archive/master.zip
     unzip master.zip && rm master.zip
     R CMD build sqlshare-master
     sudo R CMD INSTALL sqlshare_*.tar.gz
