@@ -19,12 +19,12 @@ loadconfig <- function(sqlsharedir, config) {
     if(sum(grep("@", params.seq[2])) == 0) {
       params.seq[2] <- paste(params.seq[2],"washington.edu", sep="@")
     }
+    #add the sqlshare session information to the global environemnt (make global var)
     assign("sqlshare.session", list(host=params.seq[1], user=params.seq[2], key=params.seq[3]), envir=.GlobalEnv)
   }
 }
 
 
-#Get raw data for the given query
 fetch.data.frame <- function(sql, session=sqlshare.session) {
   if(is.null(session)) {
     cat("No valid sqlshare.session found\n")
@@ -41,17 +41,19 @@ fetch.data.frame <- function(sql, session=sqlshare.session) {
                  ssl.verifypeer= FALSE,
                  ssl.verifyhost=FALSE,
                  .encoding="UTF-8")
-
-  if(nchar(data) < 3) {
+  #generally returns "" if there is no data
+  if(nchar(data) == 0) {
     return(NULL)
   }
-  
+
+  #parse it in using the read.csv file reader
   con <- textConnection(data)
   rdata <- read.csv(con, header=T)
 
   return(rdata)
 }
 
+#when the library loads, read in config file
 .onLoad <- function(libname, pkgname) {
   loadconfig(file.path(path.expand("~"), ".sqlshare"), "config")
 }
