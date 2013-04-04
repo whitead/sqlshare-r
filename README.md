@@ -24,10 +24,10 @@ Install
 
 To install from the source here, use:
 
-    wget https://github.com/whitead/sqlshare/archive/master.zip sqlshare.zip
-    gunzip sqlshare.zip && rm sqlshare.zip
-    R CMD build sqlshare    
-    sudo R CMD INSTALL sqlshare_*.tar.zip
+    wget https://github.com/whitead/sqlshare/archive/master.zip
+    unzip master.zip && rm master.zip
+    R CMD build sqlshare-master
+    sudo R CMD INSTALL sqlshare_*.tar.gz
 
 Once I get the package on r-cran you may install the package in R using
 
