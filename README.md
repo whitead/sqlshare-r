@@ -1,4 +1,4 @@
-SQLShare API for R.
+SQLShare API for R
 ===================
 This provides a minimal API for accessing [SQLShare](http://escience.washington.edu/sqlshare) in the [R programming language](http://r-project.org). Here's the syntax for
 obtaining a data.frame from a table:
