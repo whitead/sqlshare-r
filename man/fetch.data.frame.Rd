@@ -17,7 +17,7 @@ fetch.data.frame(sql, session=sqlshare.session)
   \item{session}{
     A list containing a \code{host}, \code{key}, and \code{user}. The
   default is read from \code{~/.sqlshare/config} upon loading the
-  sqlshare pacakge.
+  sqlshare package.
     }
 }
 
