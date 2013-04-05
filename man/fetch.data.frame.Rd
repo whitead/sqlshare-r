@@ -4,7 +4,7 @@
 fetch.data.frame
 }
 \description{
-Executes the given sql statement and returns the result as a data.frame.
+Executes the given SQL statement and returns the result as a data.frame.
 }
 \usage{
 fetch.data.frame(sql, session=sqlshare.session)
@@ -23,7 +23,9 @@ fetch.data.frame(sql, session=sqlshare.session)
 
 \value{
   A \code{\link{data.frame}} containing the result. A \code{NULL} is
-  returned if the result is empty.
+  returned if the query failed due to a SQL syntax error,
+  authentication, or missing dataset. A \link{data.frame} with no rows
+  indicates an empty result.
 }
 \references{
   Information on SQLShare may be found here: \url{http://escience.washington.edu/sqlshare}
