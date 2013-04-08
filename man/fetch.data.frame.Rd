@@ -28,14 +28,13 @@ fetch.data.frame(sql, session=sqlshare.session)
   indicates an empty result.
 }
 \references{
-  Information on SQLShare may be found here: \url{http://escience.washington.edu/sqlshare}
+  Information on SQLShare may be found at \url{http://escience.washington.edu/sqlshare}.
 }
 \author{
 Andrew D White
 }
 \examples{
 
-  ##Maybe replace with REST call to get default account
   \dontshow{if(!exists("sqlshare.session") || is.null(sqlshare.session)) sqlshare.session <-
   list(host="sqlshare-rest.cloudapp.net", user="sqlshare2012@gmail.com", key="4916f21df583c0e0bc5361c42d2e6b58")}
 

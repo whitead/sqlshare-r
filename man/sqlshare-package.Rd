@@ -6,7 +6,18 @@
 API for SQLShare web application
 }
 \description{
-Provides API for SQL statements on databases hosted on SQLShare (\url{http://http://escience.washington.edu/sqlshare})
+Provides API for SQL statements on databases hosted on \href{http://escience.washington.edu/sqlshare}{SQLShare}. An
+authentication file should be created at \code{$HOME/.sqlshare/config}
+and be formatted as follows:
+
+
+\preformatted{[sqlshare]
+host=sqlshare-rest.cloudapp.net
+user=your-sql-share-account-name@your-domain
+password=your-sql-share-account-key
+}
+
+After creating a SQLShare account, the account-key may be created \href{https://sqlshare.escience.washington.edu/sqlshare/\#s=credentials}{here}.
 }
 \details{
 \tabular{ll}{
@@ -21,7 +32,7 @@ License: \tab MIT\cr
 Andrew D White
 }
 \references{
-  Information on SQLShare may be found here: \url{http://escience.washington.edu/sqlshare}
+  Information on SQLShare may be found at \url{http://escience.washington.edu/sqlshare}
 }
 
 \keyword{ package }
@@ -29,7 +40,7 @@ Andrew D White
 \examples{
 
 
-  ##Maybe replace with REST call to get default account
+
   \dontshow{if(!exists("sqlshare.session") || is.null(sqlshare.session)) sqlshare.session <-
   list(host="sqlshare-rest.cloudapp.net", user="sqlshare2012@gmail.com", key="4916f21df583c0e0bc5361c42d2e6b58")}
 
