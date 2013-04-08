@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2013-04-02
 Author: Andrew White <white.d.andrew@gmail.com>
 Maintainer: Andrew White <white.d.andrew@gmail.com>
-Description: Provides API for accessing SQLShare. 
+Description: Provides API for executing and retrieving the results of SQL statements on the online SQLShare service provided by the eScience institute at the University of Washington. More information on using SQLShare may be found the package URL. 
 License: MIT
 Depends: RCurl
 URL: http://escience.washington.edu/sqlshare
