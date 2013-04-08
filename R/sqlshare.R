@@ -1,3 +1,5 @@
+sqlshare.session <- new.env()
+
 loadconfig <- function(sqlsharedir, config) {
 
   #create config directory if necessary
@@ -7,7 +9,7 @@ loadconfig <- function(sqlsharedir, config) {
   
   #check if config file exists
   if(!file.exists(cfile)) {
-    assign("sqlshare.session", NULL, envir=.GlobalEnv)
+    sqlshare.session$loaded <- FALSE
     cat(paste("Please create a config file at", cfile,"\n"))
     cat("Following this format\n[sqlshare]\nhost=sqlshare-rest.cloudapp.net\nuser=your_username\npassword=your_api_key\n")
 
@@ -20,23 +22,27 @@ loadconfig <- function(sqlsharedir, config) {
       params.seq[2] <- paste(params.seq[2],"washington.edu", sep="@")
     }
     #add the sqlshare session information to the global environemnt (make global var)
-    assign("sqlshare.session", list(host=params.seq[1], user=params.seq[2], key=params.seq[3]), envir=.GlobalEnv)
+    sqlshare.session$loaded <- TRUE
+    sqlshare.session$host <- params.seq[1]
+    sqlshare.session$user <- params.seq[2]
+    sqlshare.session$key <- params.seq[3]
   }
 }
 
 
-fetch.data.frame <- function(sql, session=sqlshare.session) {
-  if(is.null(session)) {
-    cat("No valid sqlshare.session found\n")
+fetch.data.frame <- function(sql, session = sqlshare.session) {
+
+  if(!session$loaded) {
+    cat("No valid session found\n")
     return(NULL)
   }
   
-  host <- paste("https://", sqlshare.session$host, sep="")
+  host <- with(session, paste("https://", host, sep=""))
   selector <- "/REST.svc/v1/db/file"
   query <- paste("?sql=",URLencode(sql),sep="")
 
   data <- getURL(paste(host,selector,query,sep=""),
-                 httpheader=c(Authorization =paste("ss_apikey ", sqlshare.session$user," :", sqlshare.session$key, sep="")),
+                 httpheader=c(Authorization =with(session, paste("ss_apikey ", user," :", key, sep=""))),
                  verbose = FALSE,
                  ssl.verifypeer= FALSE,
                  ssl.verifyhost=FALSE,
@@ -55,5 +61,5 @@ fetch.data.frame <- function(sql, session=sqlshare.session) {
 
 #when the library loads, read in config file
 .onLoad <- function(libname, pkgname) {
-  loadconfig(file.path(path.expand("~"), ".sqlshare"), "config")
+  loadconfig(file.path(path.expand("~"), ".sqlshare"), "config")  
 }
