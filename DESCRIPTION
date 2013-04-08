@@ -4,7 +4,7 @@ Title: API for access to SQLShare database
 Version: 1.0
 Date: 2013-04-02
 Author: Andrew White <white.d.andrew@gmail.com>
-Maintainer: Andrew White <white.d.andrew@gmail.com>, Bill Howe <billhowe@cs.washington.edu>
+Maintainer: Andrew White <white.d.andrew@gmail.com>
 Description: Provides API for accessing SQLShare. 
 License: MIT
 Depends: RCurl
