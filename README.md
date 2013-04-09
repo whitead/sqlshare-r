@@ -19,16 +19,35 @@ The format of the file should look like:
 
 Use this link to generate an [API key](https://sqlshare.escience.washington.edu/sqlshare/#s=credentials).
 
-Install
+Installing Dependencies
+----------
+Before installing, you must install the [RCurl package](http://cran.r-project.org/package=RCurl). If you are using a Linux system, you need to install the libcurl header files. For example, if you're using Ubuntu install these files from the command line with
+
+    sudo apt-get install curl-dev
+
+If you're using RedHat, install libcurl with
+
+    sudo yum -y install curl-devel
+
+Next, regardless of your operating system you must install RCurl. Open
+an R session and type
+
+    install.packages("RCurl")
+
+Installing From CRAN (preferred)
+----------
+To install from CRAN, type the following command from 
+an R session
+
+    install.packages("sqlshare")
+
+
+Installing From Source
 ----------
 
-To install from the source here, use:
+To install the latest version from the source here, use:
 
     wget https://github.com/whitead/sqlshare-r/archive/master.zip
     unzip master.zip && rm master.zip
     R CMD build sqlshare-master
     sudo R CMD INSTALL sqlshare_*.tar.gz
-
-Once I get the package on r-cran you may install the package in R using
-
-    install.packages("sqlshare")
