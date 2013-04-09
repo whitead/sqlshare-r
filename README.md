@@ -21,9 +21,9 @@ Use this link to generate an [API key](https://sqlshare.escience.washington.edu/
 
 Installing Dependencies
 ----------
-Before installing, you must install the [RCurl package](http://cran.r-project.org/package=RCurl). If you are using a Linux system, you need to install the libcurl header files. For example, if you're using Ubuntu install these files from the command line with
+Before installing, you must install the [RCurl package](http://cran.r-project.org/package=RCurl). If you are using a Linux system, you need to install the libcurl header files. For example, if you're using Ubuntu install the `libcurl-dev` package (using the variant with secure connections enabled) from the command line with
 
-    sudo apt-get install curl-dev
+    sudo apt-get install libcurl4-openssl-dev
 
 If you're using RedHat, install libcurl with
 
