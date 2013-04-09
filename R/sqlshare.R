@@ -14,21 +14,19 @@ loadconfig <- function(sqlsharedir, config) {
     cat("Following this format\n[sqlshare]\nhost=sqlshare-rest.cloudapp.net\nuser=your_username\npassword=your_api_key\n")
 
   } else {
-    #params <- yaml.load_file(cfile)
     params <- read.delim(cfile, sep="=", skip=1, header=F)
     params.seq <- sapply(c("host" ,"user", "password"), function(x) {as.character(params[params[,1] == x,2])})
     names(params.seq) <- NULL
     if(sum(grep("@", params.seq[2])) == 0) {
       params.seq[2] <- paste(params.seq[2],"washington.edu", sep="@")
     }
-    #add the sqlshare session information to the global environemnt (make global var)
+    #set the login details to the sqlshare.session environment
     sqlshare.session$loaded <- TRUE
     sqlshare.session$host <- params.seq[1]
     sqlshare.session$user <- params.seq[2]
     sqlshare.session$key <- params.seq[3]
   }
 }
-
 
 fetch.data.frame <- function(sql, session = sqlshare.session) {
 
