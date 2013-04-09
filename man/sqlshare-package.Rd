@@ -6,7 +6,7 @@
 API for SQLShare web application
 }
 \description{
-Provides API for SQL statements on databases hosted on \href{http://escience.washington.edu/sqlshare}{SQLShare}. An
+Provides API for SQL statements on databases hosted on SQLShare (\url{http://escience.washington.edu/sqlshare}). An
 authentication file should be created at \code{$HOME/.sqlshare/config}
 and be formatted as follows:
 
@@ -17,7 +17,7 @@ user=your-sql-share-account-name@your-domain
 password=your-sql-share-account-key
 }
 
-After creating a SQLShare account, the account-key may be created \href{https://sqlshare.escience.washington.edu/sqlshare/\#s=credentials}{here}.
+After creating a SQLShare account, the account-key may be created here \url{https://sqlshare.escience.washington.edu/sqlshare/\#s=credentials}.
 }
 \details{
 \tabular{ll}{
