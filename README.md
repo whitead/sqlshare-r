@@ -49,5 +49,5 @@ To install the latest version from the source here, use:
 
     wget https://github.com/whitead/sqlshare-r/archive/master.zip
     unzip master.zip && rm master.zip
-    R CMD build sqlshare-master
+    R CMD build sqlshare-r-master
     sudo R CMD INSTALL sqlshare_*.tar.gz
