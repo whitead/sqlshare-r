@@ -12,7 +12,7 @@ and be formatted as follows:
 
 
 \preformatted{[sqlshare]
-host=sqlshare-rest.cloudapp.net
+host=rest.sqlshare.escience.washington.edu
 user=your-sql-share-account-name@your-domain
 password=your-sql-share-account-key
 }
@@ -42,7 +42,7 @@ Andrew D White
 
 
   \dontshow{guest.session <- list(loaded=TRUE,
-  host="sqlshare-rest.cloudapp.net", user="sqlshare2012@gmail.com",
+  host="rest.sqlshare.escience.washington.edu", user="sqlshare2012@gmail.com",
   key="4916f21df583c0e0bc5361c42d2e6b58")}
 
   #get the periodic table of elements

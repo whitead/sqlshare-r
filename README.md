@@ -13,7 +13,7 @@ That's it! It loads a config file for authentication from:
 The format of the file should look like:
 
     [sqlshare]
-    host=sqlshare-rest.cloudapp.net
+    host=rest.sqlshare.escience.washington.edu
     user=your-user-name@your-domain
     password=your-api-key
 
