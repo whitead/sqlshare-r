@@ -36,7 +36,7 @@ Andrew D White
 \examples{
 
  \dontshow{guest.session <-
-  list(loaded=TRUE, host="sqlshare-rest.cloudapp.net", user="sqlshare2012@gmail.com",
+  list(loaded=TRUE, host="rest.sqlshare.escience.washington.edu", user="sqlshare2012@gmail.com",
   key="4916f21df583c0e0bc5361c42d2e6b58") }
 
   #get the periodic table of elements
