@@ -1,7 +1,7 @@
 Package: sqlshare
 Type: Package
 Title: API for access to SQLShare database
-Version: 1.0.3
+Version: 1.0.4
 Date: 2014-04-15
 Author: Andrew White <white.d.andrew@gmail.com>
 Maintainer: Andrew White <white.d.andrew@gmail.com>

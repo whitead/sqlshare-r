@@ -48,11 +48,14 @@ Andrew D White
   #get the periodic table of elements
   sql <- "select * from [sqlshare@uw.edu].[periodic_table]"
 
+  \dontrun{
+
   #execute the sqlshare statement. Note, the extra session argument
   #isn't necessary if a config file is created
-
   elements <- fetch.data.frame(sql, session=guest.session)
 
   #plot the ionization potential as a function of atomic number
   plot(first_ionization_ev~z, elements, type="l")
+
+  }
 }

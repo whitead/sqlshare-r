@@ -10,8 +10,8 @@ loadconfig <- function(sqlsharedir, config) {
   #check if config file exists
   if(!file.exists(cfile)) {
     sqlshare.session$loaded <- FALSE
-    cat(paste("Please create a config file at", cfile,"\n"))
-    cat("Following this format\n[sqlshare]\nhost=rest.sqlshare.escience.washington.edu\nuser=your_username\npassword=your_api_key\n")
+    packageStartupMessage(paste("Please create a config file at", cfile,"\n"))
+    packageStartupMessage("Following this format\n[sqlshare]\nhost=rest.sqlshare.escience.washington.edu\nuser=your_username\npassword=your_api_key\n")
 
   } else {
     params <- read.delim(cfile, sep="=", skip=1, header=F)
